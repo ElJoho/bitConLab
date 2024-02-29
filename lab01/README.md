@@ -82,7 +82,48 @@ Diseñar un controlador que haga que la posición del brazo siga una referencia 
 * Implementar el sistema.
 * Probar el sistema.
 
-**Fin de la transcripción.**
+**Planta (G):**
 
-**Nota:** La imagen parece ser una página de apuntes sobre un problema de control. La transcripción se ha realizado lo más fielmente posible al texto original.
+* Conjunto de elementos que componen el sistema a controlar.
+* Se le asocian 2 señales: entrada (u) y salida (y).
+* Se puede ver de la siguiente forma:
 
+**Referencia (r):**
+
+* Sirve para darle una "forma" o valor al objetivo del controlador (por ejemplo, mantener el brazo a X°).
+* Esto también conlleva la introducción de una señal de realimentación en el sistema con el fin de poder comparar la posición actual y la referencia.
+* Esta comparación se realiza mediante una resta cuyo resultado denominamos error (e).
+
+**Error (e):**
+
+* Valor que se debe corregir por medio del controlador para acercarse a la referencia.
+
+**Sensor (H):**
+
+* Es un sistema que nos permite conocer la salida de la planta.
+* Se intenta que su función de transferencia se acerque a 1 lo más posible mediante el uso de filtros y otros elementos.
+
+**Control (C):**
+
+* Un sistema dinámico que regula la entrada de la planta con el fin de que la salida sea lo más parecida a la referencia y así hacer tender el error a cero.
+* También se encarga de la conversión de datos.
+
+**Perturbación (d):**
+
+* Es una entrada a la planta que modifica la salida, esta no se puede predecir.
+
+**Evaluación del desempeño del controlador:**
+
+* **Desempeño:** La capacidad del controlador de rechazar perturbaciones (regresar a la referencia).
+* **Robustez:** Mantener la estabilidad del sistema de lazo cerrado a pesar de la incertidumbre.
+
+**Elementos del diagrama:**
+
+* **Entrada (u):** Voltaje, torque o posición.
+* **Salida (y):** Posición.
+* **Referencia (r):** Posición deseada.
+* **Planta (G):** Sistema a controlar.
+* **Sensor (H):** Sensor de posición.
+* **Control (C):** Controlador.
+* **Error (e):** Diferencia entre la referencia y la salida.
+* **Perturbación (d):** Entrada no deseada que afecta la salida.
