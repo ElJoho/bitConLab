@@ -1,10 +1,10 @@
 La función de trasnferencia obtenida es:
-$G_{(s)} = \frac{0.001147}{s^2 + 0.2808 s + 0.001112}$
+$\LARGE G_{(s)} = \frac{0.001147}{s^2 + 0.2808 s + 0.001112}$
 
 
 Para diseñar controladores proporcional (P) y proporcional-integral (PI) para una función de transferencia dada, vamos a seguir un enfoque sistemático. La función de transferencia que nos das es:
 
-$T(s) = \frac{0.001147}{s^2 + 0.2808s + 0.001112}$
+$\LARGE T(s) = \frac{0.001147}{s^2 + 0.2808s + 0.001112}$
 
 ### Controlador Proporcional (P)
 
@@ -12,7 +12,13 @@ El controlador proporcional se puede representar por la función de transferenci
 
 La función de transferencia del sistema en lazo cerrado con solo un controlador proporcional sería:
 
-$ T_{cl}(s) = \frac{K_p G(s)}{1 + K_p  G(s)} $
+$\LARGE T_{cl}(s) = \frac{K_p G(s)}{1 + K_p  G(s)}$
+
+$\LARGE T_{cl}(s) =  \frac{K_p \frac{0.001147}{s^2 + 0.2808s + 0.001112}}{1 + K_p \frac{0.001147}{s^2 + 0.2808s + 0.001112}}$
+
+$\LARGE T_{cl}(s) =  \frac{K_p \frac{0.001147}{s^2 + 0.2808s + 0.001112}}{\frac{s^2 + 0.2808s + 0.001112 + 0.001147 K_p}{s^2 + 0.2808s + 0.001112}}$
+
+$\LARGE T_{cl}(s) =  \frac{ 0.001147 K_p }{ s^2 + 0.2808s + ( 0.001112 + 0.001147 K_p )}$
 
 donde $G(s) = T(s)$ es la función de transferencia del sistema.
 
@@ -22,7 +28,9 @@ El controlador PI se puede representar por la función de transferencia $C(s) = 
 
 La función de transferencia del sistema en lazo cerrado con un controlador PI sería:
 
-$ T_{cl}(s) = \frac{(K_p + \frac{K_i}{s})  G(s)}{1 + (K_p + \frac{K_i}{s})  G(s)}$
+$\LARGE T_{cl}(s) = \frac{(K_p + \frac{K_i}{s})  G(s)}{1 + (K_p + \frac{K_i}{s})  G(s)}$
+
+$\LARGE T_{cl}(s) = \frac{ 0.001147 K_p(s^2+0.2808s+0.001112) + 0.001147K_i(s^3+0.2808s^2+0.001112s) } { (s^2 + 0.2808s + 0.001112)(s^3 + 0.2808s^2 + 0.001112s) + 0.001147K_p(s^2 + 0.2808s +  0.001112) + 0.001147K_i(s^3 + 0.2808s^2 + 0.001112s) }$
 
 ### Cálculo de $K_p$ y $K_i$
 
